@@ -1,0 +1,76 @@
+---
+- hosts: all
+  sudo: yes
+
+  handlers:
+  - name: restart postgresql
+    service: name=postgresql state=restarted
+
+  tasks:
+  - name: Update Apt Cache
+    apt: update_cache=yes
+
+  - name: Install PostgreSQL
+    apt: name={{ item }} state=installed
+    with_items:
+    - postgresql-9.3
+    - postgresql-server-dev-9.3
+
+  # Turn on TCP hosting and allows connections from Vagrant host:
+  - name: Configure PostgreSQL
+    copy:
+      src: files/{{ item }}
+      dest: /etc/postgresql/9.3/main/{{ item }}
+      mode: 0644
+      owner: postgres
+      group: postgres
+      backup: yes
+    with_items:
+    - postgresql.conf
+    - pg_hba.conf
+    notify: restart postgresql
+
+  - name: Create psql history file
+    copy:
+      dest: /var/lib/postgresql/.psql_history
+      content: ""
+      owner: postgres
+      group: postgres
+      mode: 0600
+
+  - name: Ensure Python installation complete
+    apt: name={{item}} state=installed
+    with_items:
+    - python3
+    - python3-pip
+    - python-virtualenv
+    - python-psycopg2
+    - virtualenvwrapper
+
+  - name: Install git (for installing pip modules from github)
+    apt: name=git state=installed
+
+
+- hosts: all
+  sudo: yes
+  sudo_user: vagrant
+  tasks:
+  - name: Configure virtualenv
+    shell: >
+      . /usr/share/virtualenvwrapper/virtualenvwrapper.sh \
+      && mkvirtualenv \
+        -r /vagrant/requirements/development.txt \
+        --python=/usr/bin/python3 \
+        pew
+    args:
+      executable: /bin/bash
+
+- hosts: all
+  sudo: yes
+  sudo_user: postgres
+  tasks:
+  - name: Create PostgreSQL database
+    postgresql_db: name=pew state=present
+
+  - name: Create PostgreSQL user
+    postgresql_user: name=pew password=pew db=pew state=present
