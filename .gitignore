@@ -1,0 +1,13 @@
+*.pyc
+*.py~
+*.project
+*.pydevproject
+*.tmp_*
+*.db
+settings_local.py
+*.DS_Store
+*.swp
+*.un~
+*.svn/*
+.dev_activate
+.idea
