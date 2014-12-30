@@ -23,4 +23,5 @@ To run the website inside your VM, run
 
 * `vagrant ssh`
 * `workon pew`
-* `cd /vagrant`
+* `dj migrate`
+* `djr`
