@@ -1,0 +1,2 @@
+alias dj='python /vagrant/pew/manage.py'
+alias djr='dj runserver 0.0.0.0:8000'

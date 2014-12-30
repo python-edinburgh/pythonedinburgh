@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #config.vm.box_url = 'http://files.vagrantup.com/' + config.vm.box + '.box'
 
   # PostgreSQL port:
-  config.vm.network "forwarded_port", guest: 5000, host: 15000
+  config.vm.network "forwarded_port", guest: 8000, host: 18000
   config.vm.network "forwarded_port", guest: 5432, host: 15432
   config.ssh.forward_agent = true
 

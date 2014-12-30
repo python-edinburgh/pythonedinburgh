@@ -10,27 +10,26 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 import environ
 
-root = environ.Path(__file__) - 2
+# root is the top-level git directory:
+root = environ.Path(__file__) - 3
 env = environ.Env(DEBUG=(bool, False), )
 
 environ.Env.read_env(root('.env'))
 
 BASE_DIR = root()
-print('BASE:', BASE_DIR)
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&7bg#nzt)@xfncbr_8247s*fjqw7peaf6sckwhir1zzc1rxs!n'
+SECRET_KEY = env('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 
 
 # Application definition
@@ -63,14 +62,16 @@ WSGI_APPLICATION = 'pew.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = { 'default': env.db() }
+DATABASES = {
+    'default': env.db()
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-GB'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/London'
 
 USE_I18N = True
 

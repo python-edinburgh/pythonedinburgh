@@ -65,6 +65,16 @@
     args:
       executable: /bin/bash
 
+  - name: Install virtualenv hooks
+    copy:
+      dest: /home/vagrant/.virtualenvs/pew/bin/
+      src: files/{{item}}
+      mode: 0775
+    with_items:
+    - postactivate
+    - postdeactivate
+
+
 - hosts: all
   sudo: yes
   sudo_user: postgres
