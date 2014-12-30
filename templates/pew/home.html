@@ -21,26 +21,22 @@
                 each month. Other events such as talks and sprints are hosted
                 less frequently.
             </p>
-            {% if not upcoming_events %}
-            <p>
-                There are no events arranged in the near future.
-            </p>
-            {% elif upcoming_events|length_is:"1" %}
-            <p>
-                The next event is <strong>{{upcoming_events.0.title}}</strong> on {{upcoming_events.0.date_string}} in {{upcoming_events.0.where}}.
-            </p>
-            {% else %}
+            {% if upcoming_events %}
             <p>
                 Upcoming events are:
             </p>
             <ul>
                 {% for e in upcoming_events reversed %}
                 <li>
-                    <strong>{{e.title}}</strong> on {{e.date_string}} in {{e.where}}
+                    <strong>
+						<a href="{% url 'event-details' slug=e.slug %}">{{e.title}}</a></strong> on {{e.event_dt|date:"D, d M Y"}} in {{e.where|default:"an undetermined location"}}
                 </li>
-
-            {% endfor %}
+                {% endfor %}
             </ul>
+            {% else %}
+            <p>
+                There are no events arranged in the near future.
+            </p>
             {% endif %}
 
             <p>
