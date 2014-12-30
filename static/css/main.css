@@ -1,0 +1,48 @@
+#banner {
+    color: white;
+    background-color: #1476b6;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 30pt;
+    line-height: 100%;
+    padding: 12px;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    #banner {
+        line-height: 130%;
+        font-size: 24pt;
+    }
+}
+
+#banner img {
+    vertical-align: baseline;
+    margin-right: 12px;
+    float: left;
+}
+
+.avatar {
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#footer {
+    margin-top: 20px;
+    padding: 12px;
+    text-align: center;
+    background-color: #dddddd;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer, #banner {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

@@ -3,11 +3,9 @@ from django.contrib import admin
 
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'pew.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^$', 'main.views.home', name='home'),
 
-    url('^markdown/', include( 'django_markdown.urls')),
-
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^events/',    include('events.urls')),
+    url(r'^markdown/',  include('django_markdown.urls')),
+    url(r'^admin/',     include(admin.site.urls)),
 )
