@@ -1,7 +1,15 @@
+from datetime import datetime
 from django.core.urlresolvers import reverse
 from django.db import models
 
 from django_markdown.models import MarkdownField
+
+
+class FutureEventManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset()\
+            .filter(event_dt__gte=datetime.now())\
+            .filter(published__exact=True)
 
 
 class Event(models.Model):
@@ -20,3 +28,6 @@ class Event(models.Model):
 
     class Meta(object):
         ordering = ['event_dt']
+
+    objects = models.Manager()
+    upcoming = FutureEventManager()
