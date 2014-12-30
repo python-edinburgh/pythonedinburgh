@@ -18,7 +18,7 @@ environ.Env.read_env(root('.env'))
 
 BASE_DIR = root()
 
-# Quick-start development settings - unsuitable for production
+
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 SECRET_KEY = env('SECRET_KEY')
@@ -28,7 +28,7 @@ DEBUG = env('DEBUG')
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = [
-    '*'
+    '*'     # FIXME: Change this to something secure in production.
 ]
 
 
@@ -41,6 +41,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django_markdown',
+
     'events',
 )
 
