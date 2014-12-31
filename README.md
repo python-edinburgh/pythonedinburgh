@@ -1,6 +1,11 @@
+[![Build Status](https://img.shields.io/travis/python-edinburgh/pythonedinburgh/django-rewrite.svg)](https://travis-ci.org/python-edinburgh/pythonedinburgh)
+[![Code Health](https://landscape.io/github/python-edinburgh/pythonedinburgh/django-rewrite/landscape.svg)](https://landscape.io/github/python-edinburgh/pythonedinburgh/django-rewrite)
+[![Coverage Status](https://img.shields.io/coveralls/python-edinburgh/pythonedinburgh/django-rewrite.svg)](https://coveralls.io/r/python-edinburgh/pythonedinburgh?branch=django-rewrite)
+[![Requirements Status](https://requires.io/github/python-edinburgh/pythonedinburgh/requirements.svg?branch=django-rewrite)](https://requires.io/github/python-edinburgh/pythonedinburgh/requirements/?branch=django-rewrite)
+
 # Python Edinburgh Website
 
-This is the code for the Python Edinburgh website. It is built with Python and
+This is the code for the [Python Edinburgh](http://www.pythonedinburgh.org) website. It is built with Python and
 Django.
 
 
