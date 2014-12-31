@@ -3,7 +3,8 @@ python:
   - "3.4"
 # command to install dependencies
 install:
-  - pip install -r requirements/development.txt
+  - pip install -r requirements/testing.txt
+  - pip install coveralls
 
 env:
   global:
@@ -11,4 +12,8 @@ env:
   - SECRET_KEY="not-important-for-tests"
 
 # command to run tests
-script: make test
+script:
+  make test
+
+after_success:
+  coveralls
