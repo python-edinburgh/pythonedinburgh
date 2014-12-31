@@ -44,3 +44,14 @@ class EventTestCase(TestCase):
         )
 
         self.assertEqual(len(Event.upcoming.all()), 0)
+
+    def test_get_absolute_url(self):
+        evt = Event.objects.create(
+            title='Future Event',
+            description='this event is going to be great.',
+            event_dt=timezone.datetime(2015, 3, 12),
+            location='The Pub',
+            published=False,
+            slug='new-event',
+        )
+        self.assertEqual('/events/2015/3/new-event', evt.get_absolute_url())

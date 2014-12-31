@@ -1,0 +1,11 @@
+[run]
+source = pew
+branch = True
+
+[report]
+omit =
+    pew/manage.py
+    pew/pew/wsgi.py
+    */admin.py
+    */migrations/*
+    */tests.py
