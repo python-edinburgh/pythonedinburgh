@@ -28,6 +28,7 @@ htmlcov/
 lib/
 lib64/
 nosetests.xml
+old-flask-app
 parts/
 pip-delete-this-directory.txt
 pip-log.txt
