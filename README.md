@@ -24,9 +24,39 @@ virtual machine, install and configure PostgreSQL and Python 3. It will also
 set up virtualenvwrapper and create a virtual environment called `pew` with
 all the development dependencies installed into it.
 
-To run the website inside your VM, run
+To start working with your installed site, do the following:
 
 * `vagrant ssh`
 * `workon pew`
-* `dj migrate`
-* `djr`
+
+### Configuration
+
+The site is built as a [12 Factor](http://12factor.net/) app, so configuration
+is passed in via environment variables. To make it easier to work with locally,
+configuration can be stored in a file in the top-level directory called `.env`.
+The following will work in the Vagrant VM:
+
+```
+DEBUG=True
+DATABASE_URL=postgres://pew:pew@localhost/pew
+SECRET_KEY=this-doesn't-matter-for-development
+```
+
+Once you have created your `.env` file, run the following commands:
+
+```bash
+dj migrate  # This will run the project's migrations on the development db.
+djr         # This alias runs the Django development server.
+```
+
+## Run Tests
+
+Run `make test` to run the code checks & unit tests and print a coverage
+report. The alias `djt` will also run the tests without the coverage report or
+quality check.
+
+
+## Finding Your Way Around
+
+The site's homepage can be browsed at `http://localhost:18000/` if you are
+running the Vagrant VM. The admin site is configured to run at `/admin`.
