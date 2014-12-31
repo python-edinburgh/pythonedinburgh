@@ -7,7 +7,7 @@ from django_markdown.models import MarkdownField
 
 class FutureEventManager(models.Manager):
     def get_queryset(self):
-        return super().get_queryset()\
+        return super(FutureEventManager, self).get_queryset()\
             .filter(event_dt__gte=timezone.now())\
             .filter(published__exact=True)
 
@@ -23,6 +23,8 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+    __unicode__ = __str__
 
     def get_absolute_url(self):
         return reverse(
