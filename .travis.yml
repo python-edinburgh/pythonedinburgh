@@ -6,8 +6,8 @@ install:
   - pip install -r requirements/development.txt
 
 env:
-  - DATABASE_URL=sqlite://
-  - SECRET_KEY=not-important-for-tests
+  - DATABASE_URL="sqlite://"
+  - SECRET_KEY="not-important-for-tests"
 
 # command to run tests
 script: make test
