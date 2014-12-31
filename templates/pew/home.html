@@ -29,7 +29,7 @@
                 {% for e in upcoming_events reversed %}
                 <li>
                     <strong>
-						<a href="{% url 'event-details' slug=e.slug %}">{{e.title}}</a></strong> on {{e.event_dt|date:"D, d M Y"}} in {{e.where|default:"an undetermined location"}}
+						<a href="{% url 'event-details' year=e.event_dt.year month=e.event_dt.month slug=e.slug %}">{{e.title}}</a></strong> on {{e.event_dt|date:"D, d M Y"}} in {{e.where|default:"an undetermined location"}}
                 </li>
                 {% endfor %}
             </ul>

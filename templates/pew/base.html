@@ -2,7 +2,7 @@
 <html lang="en">
 <head> 
 	
-	<title>Python Edinburgh</title> 
+	<title>{% block title %}Python Edinburgh{% if title %} &ndash; {{ title }}{% endif %}{% endblock %}</title>
 	
 	<meta name="description" content="The support group for Python developers in Edinburgh, Scotland." />
 	<meta name="keywords" content="python,edinburgh,meetup,dojo,events" />
@@ -27,7 +27,7 @@
 <body>
 
 <div id="banner">
-    <img src="/static/images/banner-logo.png">Python <b>Edinburgh</b>
+    <a href="{% url 'home' %}"><img src="/static/images/banner-logo.png"></a>Python <b>Edinburgh</b>
 </div>
 	
 <div class="container">

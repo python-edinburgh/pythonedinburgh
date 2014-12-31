@@ -1,13 +1,24 @@
+{% extends 'pew/base.html' %}
 {% load django_markdown %}
-<!DOCTYPE html>
-<html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<title>{{event.title}}</title>
-</head>
-<body>
-	<div>
+
+{% block content %}
+	<div class="row">
+		<h1>{{event.title}}<br>
+			<small>
+				<b>{{event.event_dt|date:"D, d M Y"}}</b>
+				{% if event.location %}
+					at <b>{{event.location}}</b>
+				{% endif %}
+			</small>
+		</h1>
+		<p></p>
+	</div>
+    <div class="row">
 		{{event.description|markdown_safe}}
 	</div>
-</body>
-</html>
+
+	<div class="row bg-info well">
+		All attendees of Python Edinburgh events must adhere to our
+		<a href="/pages/code-of-conduct/">Code of Conduct</a>.
+	</div>
+{% endblock content %}

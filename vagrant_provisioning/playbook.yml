@@ -82,5 +82,17 @@
   - name: Create PostgreSQL database
     postgresql_db: name=pew state=present
 
-  - name: Create PostgreSQL user
-    postgresql_user: name=pew password=pew db=pew state=present
+  # Used by pew app - unrealistic production privileges!:
+  - name: Create PostgreSQL user 'pew'
+    postgresql_user: name=pew password=pew role_attr_flags=SUPERUSER state=present
+
+  # Makes it easier to log in to postgres from Vagrant:
+  - name: Create PostgreSQL user 'vagrant'
+    postgresql_user: name=vagrant password=NULL role_attr_flags=SUPERUSER state=present
+
+  # Used by pew tests - must be able to create & delete dbs:
+  - name: Remove PostgreSQL user 'pew_test'
+    postgresql_user: name=pew_test state=absent
+
+  - name: Remove PostgreSQL user 'django'
+    postgresql_user: name=django state=absent

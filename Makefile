@@ -5,5 +5,5 @@ export PYTHONPATH=pew
 
 test:
 	flake8 pew/pew --ignore=E124,E501,E127,E128
-#coverage run --branch --source=pew/pew `which django-admin.py` test pew.tests
-#coverage report
+	coverage run --branch --source=pew ./pew/manage.py test pew --settings=pew.settings
+	coverage report

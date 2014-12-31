@@ -1,0 +1,6 @@
+{% extends 'pew/base.html' %}
+{% load django_markdown %}
+{% block title %}Python Edinburgh &ndash; {{ flatpage.title }}{% endblock %}
+{% block content %}
+	{{ flatpage.content | markdown_safe }}
+{% endblock content %}

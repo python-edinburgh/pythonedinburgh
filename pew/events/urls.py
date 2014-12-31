@@ -4,5 +4,7 @@ from django.contrib import admin
 from .views import EventDetails
 
 urlpatterns = patterns('',
-    url(r'^(?P<slug>[a-z_-]+)$', EventDetails.as_view(), name='event-details'),
+    url(
+        r'^(?P<year>\d+)/(?P<month>\d+)/(?P<slug>[a-z0-9_-]+)$',
+        EventDetails.as_view(), name='event-details'),
 )
