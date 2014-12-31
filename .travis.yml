@@ -6,6 +6,7 @@ install:
   - pip install -r requirements/development.txt
 
 env:
+  global:
   - DATABASE_URL="sqlite://"
   - SECRET_KEY="not-important-for-tests"
 
