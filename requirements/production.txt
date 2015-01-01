@@ -1,0 +1,4 @@
+-r testing.txt
+
+gunicorn==19.1.1
+whitenoise==1.0.6

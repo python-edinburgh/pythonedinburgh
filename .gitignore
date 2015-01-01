@@ -33,5 +33,6 @@ parts/
 pip-delete-this-directory.txt
 pip-log.txt
 sdist/
+staticfiles
 target/
 var/
