@@ -1,35 +1,37 @@
-<!DOCTYPE html> 
+{% load bootstrap_toolkit %}
+{% load static from staticfiles %}
+<!DOCTYPE html>
 <html lang="en">
-<head> 
-	
+<head>
+
 	<title>{% block title %}Python Edinburgh{% if title %} &ndash; {{ title }}{% endif %}{% endblock %}</title>
-	
+
 	<meta name="description" content="The support group for Python developers in Edinburgh, Scotland." />
 	<meta name="keywords" content="python,edinburgh,meetup,dojo,events" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link rel="icon" href="/static/favicon.png" type="image/png" />
-	
+
+	<link rel="icon" href="{%  static 'favicon.png' %}" type="image/png" />
+
 	<link rel="alternate" type="application/rss+xml" title="Python Edinburgh Meetup RSS Feed"
 	   href="http://www.google.com/calendar/feeds/practicalpoetry.co.uk_sbqp5tpnm93b3bleap3mqf67jk%40group.calendar.google.com/public/basic?futureevents=true"/>
     <link rel="alternate" type="text/calendar" title="Python Edinburgh Meetup iCal Feed"
        href="http://www.google.com/calendar/ical/practicalpoetry.co.uk_sbqp5tpnm93b3bleap3mqf67jk%40group.calendar.google.com/public/basic.ics?futureevents=true"/>
 
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+	{% bootstrap_stylesheet_tag %}
+    {% bootstrap_stylesheet_tag "responsive" %}
 	<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
 
     <link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	
+
 	{% block extra_head %}{% endblock %}
-	
-</head> 
+
+</head>
 <body>
 
 <div id="banner">
-    <a href="{% url 'home' %}"><img src="/static/images/banner-logo.png"></a>Python <b>Edinburgh</b>
+    <a href="{% url 'home' %}"><img src="{% static 'images/banner-logo.png' %}"></a>Python <b>Edinburgh</b>
 </div>
-	
+
 <div class="container">
 
         {% block content %}
@@ -62,5 +64,5 @@
 
 </script>
 <script type="text/javascript" src="/static/javascript/retina.js"></script>
-</body> 
+</body>
 </html>

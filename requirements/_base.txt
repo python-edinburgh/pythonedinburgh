@@ -2,3 +2,4 @@ django==1.7.1
 psycopg2==2.5.4
 django-environ==0.3.0
 django-markdown==0.8.4
+django-bootstrap-toolkit==2.15.0

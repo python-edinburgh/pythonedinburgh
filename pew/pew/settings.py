@@ -27,8 +27,10 @@ DEBUG = env('DEBUG')
 
 TEMPLATE_DEBUG = DEBUG
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 ALLOWED_HOSTS = [
-    '*'     # FIXME: Change this to something secure in production.
+    '*',     # FIXME: Change this to something secure in production.
 ]
 
 
@@ -44,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'bootstrap_toolkit',
     'django_markdown',
 
     'events',
@@ -98,6 +101,6 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = root('staticfiles')
 
 SITE_ID = 1
