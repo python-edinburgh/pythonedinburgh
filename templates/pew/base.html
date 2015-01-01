@@ -19,9 +19,9 @@
 
 	{% bootstrap_stylesheet_tag %}
     {% bootstrap_stylesheet_tag "responsive" %}
-	<link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+	<link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
 
-    <link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
 
 	{% block extra_head %}{% endblock %}
 
@@ -63,6 +63,6 @@
   })();
 
 </script>
-<script type="text/javascript" src="/static/javascript/retina.js"></script>
+<script type="text/javascript" src="{% static 'javascript/retina.js' %}"></script>
 </body>
 </html>
