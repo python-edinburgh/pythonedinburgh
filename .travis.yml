@@ -1,19 +1,19 @@
 language: python
 python:
-  - "3.4"
-# command to install dependencies
+- '3.4'
 install:
-  - pip install -r requirements/testing.txt
-  - pip install coveralls
-
+- pip install -r requirements/testing.txt
+- pip install coveralls
 env:
   global:
   - DATABASE_URL="sqlite://"
   - SECRET_KEY="not-important-for-tests"
-
-# command to run tests
-script:
-  make test
-
-after_success:
-  coveralls
+script: make test
+after_success: coveralls
+deploy:
+  provider: heroku
+  app:
+    django-rewrite: python-edinburgh-staging 
+    production: mighty-inlet-4698
+  api_key:
+    secure: mHQAmZL7MgFAxBz1qg8Zw427DIvar4r60eQmlSEDVVM5sbFPrpoKCY52lYJnNtTlXR/n95b6inn7s20R61qMvXSzL2LtpwDxCaN41w5Ea4xjqZeyqSNuxqwOlq3/ajMAkQHnueSBpVVT9dt7Z1LfgCNNUBVYygFqhyH0pwY8Hoc=
