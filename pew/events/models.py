@@ -32,7 +32,7 @@ class Event(models.Model):
             args=[self.event_dt.year, self.event_dt.month, self.slug])
 
     class Meta(object):
-        ordering = ['event_dt']
+        ordering = ['-event_dt']
 
     objects = models.Manager()
     upcoming = FutureEventManager()
