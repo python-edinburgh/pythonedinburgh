@@ -1,5 +1,5 @@
 -r testing.txt
 
-ipython==2.3.1
-ipdb==0.8
+ipython
+ipdb
 

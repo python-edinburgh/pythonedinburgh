@@ -14,7 +14,7 @@
             <h3>Upcoming Events</h3>
             {% if upcoming_events %}
             <ul class="list-unstyled">
-                {% for e in upcoming_events reversed %}
+                {% for e in upcoming_events %}
                 <li>
                     <strong>
 						<a href="{% url 'event-details' year=e.event_dt.year month=e.event_dt.month slug=e.slug %}">{{e.title}}</a></strong> on {{e.event_dt|date:"D, d M Y"}} in {{e.location|default:"an undetermined location"}}
