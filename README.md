@@ -1,7 +1,7 @@
-[![Build Status](https://img.shields.io/travis/python-edinburgh/pythonedinburgh/django-rewrite.svg)](https://travis-ci.org/python-edinburgh/pythonedinburgh)
-[![Code Health](https://landscape.io/github/python-edinburgh/pythonedinburgh/django-rewrite/landscape.svg)](https://landscape.io/github/python-edinburgh/pythonedinburgh/django-rewrite)
-[![Coverage Status](https://img.shields.io/coveralls/python-edinburgh/pythonedinburgh/django-rewrite.svg)](https://coveralls.io/r/python-edinburgh/pythonedinburgh?branch=django-rewrite)
-[![Requirements Status](https://requires.io/github/python-edinburgh/pythonedinburgh/requirements.svg?branch=django-rewrite)](https://requires.io/github/python-edinburgh/pythonedinburgh/requirements/?branch=django-rewrite)
+[![Build Status](https://img.shields.io/travis/python-edinburgh/pythonedinburgh/master.svg)](https://travis-ci.org/python-edinburgh/pythonedinburgh)
+[![Code Health](https://landscape.io/github/python-edinburgh/pythonedinburgh/master/landscape.svg)](https://landscape.io/github/python-edinburgh/pythonedinburgh/master)
+[![Coverage Status](https://img.shields.io/coveralls/python-edinburgh/pythonedinburgh/master.svg)](https://coveralls.io/r/python-edinburgh/pythonedinburgh?branch=master)
+[![Requirements Status](https://requires.io/github/python-edinburgh/pythonedinburgh/requirements.svg?branch=master)](https://requires.io/github/python-edinburgh/pythonedinburgh/requirements/?branch=master)
 
 # Python Edinburgh Website
 
