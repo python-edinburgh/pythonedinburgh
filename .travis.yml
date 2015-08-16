@@ -14,7 +14,7 @@ after_success: coveralls
 deploy:
   provider: heroku
   app:
-    django-rewrite: python-edinburgh-staging 
+    master: python-edinburgh-staging 
     production: mighty-inlet-4698
   api_key:
     secure: mHQAmZL7MgFAxBz1qg8Zw427DIvar4r60eQmlSEDVVM5sbFPrpoKCY52lYJnNtTlXR/n95b6inn7s20R61qMvXSzL2LtpwDxCaN41w5Ea4xjqZeyqSNuxqwOlq3/ajMAkQHnueSBpVVT9dt7Z1LfgCNNUBVYygFqhyH0pwY8Hoc=
