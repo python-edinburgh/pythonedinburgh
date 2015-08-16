@@ -11,4 +11,4 @@ test:
 
 .PHONY: clean
 clean:
-	rm -rf staticfiles
+	rm -rf staticfiles .tox
