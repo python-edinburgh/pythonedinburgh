@@ -1,6 +1,6 @@
-django==1.8.3
+django==1.8.4
 psycopg2==2.6.1
 django-environ==0.3.0
 django-markdown==0.8.4
 django-bootstrap-toolkit==2.15.0
-whitenoise==2.0.2
+whitenoise==2.0.3
