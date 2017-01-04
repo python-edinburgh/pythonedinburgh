@@ -1,4 +1,4 @@
-django==1.10.4
+django==1.10.5
 psycopg2==2.6.2
 django-environ==0.4.1
 django-markdown==0.8.4
