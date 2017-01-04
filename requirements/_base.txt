@@ -3,4 +3,4 @@ psycopg2==2.6.2
 django-environ==0.4.1
 django-markdown==0.8.4
 django-bootstrap-toolkit==2.15.0
-whitenoise==3.2.2
+whitenoise==3.2.3
